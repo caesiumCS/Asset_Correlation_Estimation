@@ -4,6 +4,8 @@ from Config import Config
 import yfinance as yf
 from tqdm import tqdm
 
+
+
 class HeadDataDownloader:
 
     def __init__(self):
@@ -16,17 +18,20 @@ class HeadDataDownloader:
         tickers_to_save = []
         for ticker in tqdm(np.unique(root_data['Symbol'])):
             x = yf.Ticker(ticker)
-            try:
-                x = x.history(period='max')
-            except JSONDecodeError:
-                continue
+            x = x.history(period='max')
             x = x.loc[left_time:right_time]
             total_days = int(str(right_time - left_time).split()[0])
             if x.shape[0] <= total_days and x.shape[0]>=self.config.MINIMUM_DAYS_IN_DATA:
                 tickers_to_save.append(ticker)
             
-            def f(el):
-                return el in tickers_to_save
+        def f(el):
+            return el in tickers_to_save
             
-            new_data = root_data[ root_data['Symbol'].apply(f) ]
-            new_data.to_csv(self.config.HEAD_DATA_PATH, index=False)
+        new_data = root_data[ root_data['Symbol'].apply(f) ]
+        new_data.to_csv(self.config.HEAD_DATA_PATH, index=False)
+
+if __name__ == '__main__':
+    print('Testing HeadDataDownloader class...')
+    obj = HeadDataDownloader()
+    obj.create_head_dataset()
+    print('Test confirmed.')
