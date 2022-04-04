@@ -26,9 +26,9 @@ class TrainingDataset(Dataset):
 
         print('Forming datasets...')
 
-        for ind in tqdm(range(dataframe.shape[0])):
-            sector = dataframe.iloc[ind]['GICS Sector']
-            ticker = dataframe.iloc[ind]['Symbol']
+        for ind in tqdm(range(self.dataframe.shape[0])):
+            sector = self.dataframe.iloc[ind]['GICS Sector']
+            ticker = self.dataframe.iloc[ind]['Symbol']
 
             if self.sectors_to_datasets.get(sector) is None:
                 self.sectors_to_datasets[sector] = dict()
@@ -116,7 +116,7 @@ class TrainingDataset(Dataset):
     
 if __name__ == '__main__':
     file = open('TestLogs/TrainingDatasetTestLog.txt', 'w')
-    
+
     print('\nTest and info about Training dataaset.\n\n')
     obj = TrainingDataset()
     file.write(obj.print_info(if_print = False))
