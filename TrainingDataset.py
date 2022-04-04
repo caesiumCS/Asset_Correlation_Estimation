@@ -10,8 +10,8 @@ from tqdm import tqdm
 
 class TrainingDataset(Dataset):
 
-    def __init__(self, dataframe):
-        self.dataframe = dataframe
+    def __init__(self):
+        self.dataframe = pd.read_csv(Config.HEAD_DATA_PATH)
         self.train_size = Config.TRAIN_SIZE
         self.test_size = Config.TEST_SIZE
         self.x_window_size = Config.INPUT_TIME_SERIES_SIZE
@@ -116,11 +116,10 @@ class TrainingDataset(Dataset):
     
 if __name__ == '__main__':
     file = open('TestLogs/TrainingDatasetTestLog.txt', 'w')
+    
     print('\nTest and info about Training dataaset.\n\n')
-    dataframe = pd.read_csv(Config.HEAD_DATA_PATH)
-    obj = TrainingDataset(dataframe)
+    obj = TrainingDataset()
     file.write(obj.print_info(if_print = False))
-
     Y = []
     for step in tqdm(range(obj.get_train_len())):
         x, y = obj.get_train_batch()
@@ -130,7 +129,7 @@ if __name__ == '__main__':
     print(balance)
     file.write('\n\n'+balance)
     file.close()
-    
+
     print('Test confirmed!')
 
 
