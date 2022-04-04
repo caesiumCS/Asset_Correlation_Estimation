@@ -1,3 +1,4 @@
+import torch
 from websockets import Data
 from TimeSeriesDataset import TimeSeriesDataset
 from torch.utils.data import Dataset
@@ -9,7 +10,7 @@ from TimeSeriesDataset import TimeSeriesDataset
 
 class TrainingDataset(Dataset):
 
-    def __init__(self, dataframe , train_batch_size, test_batch_size):
+    def __init__(self, dataframe):
         self.dataframe = dataframe
         self.train_size = Config.TRAIN_SIZE
         self.test_size = Config.TEST_SIZE
@@ -37,23 +38,63 @@ class TrainingDataset(Dataset):
             self.sectors_to_datasets[sector][ticker]['Train'] = TimeSeriesDataset(data_train, ticker, sector, self.x_window_size, self.y_window_size)
             self.sectors_to_datasets[sector][ticker]['Test'] = TimeSeriesDataset(data_test, ticker, sector, self.x_window_size, self.y_window_size)
 
+            self.sectors = list(self.sectors_to_datasets.keys())
+
     def get_train_len(self):
         return self.train_size
+
+    def get_random_element_from_array(self, array):
+        proba = 1.0/len(array)
+        return np.random.choice(array, p = [proba]*len(array))
 
     def get_test_len(self):
         return self.test_size
 
     def get_train_batch(self):
-        pass
+        x = []
+        y = []
+        for _ in range(self.train_batch_size):
+            sector_1 = self.get_random_element_from_array(self.sectors)
+            sector_2 = self.get_random_element_from_array(self.sectors)
+            ticker_1 = self.get_random_element_from_array(list(self.sectors_to_datasets[sector_1]))
+            ticker_2 = self.get_random_element_from_array(list(self.sectors_to_datasets[sector_1]))
+            x1, y1 = self.sectors_to_datasets[sector_1][ticker_1]['Train'].get_element()
+            x2, y2 = self.sectors_to_datasets[sector_2][ticker_2]['Train'].get_element()
+            x.append(self.prepare_object(x1, x2))
+            y.append(self.prepare_label(y1, y2))
+
+        return torch.Tensor(np.array(x)), torch.Tensor(np.array(y))
 
     def get_test_batch(self):
-        pass
+        x = []
+        y = []
+        
+        for _ in range(self.test_batch_size):
+            sector_1 = self.get_random_element_from_array(self.sectors)
+            sector_2 = self.get_random_element_from_array(self.sectors)
+            ticker_1 = self.get_random_element_from_array(list(self.sectors_to_datasets[sector_1]))
+            ticker_2 = self.get_random_element_from_array(list(self.sectors_to_datasets[sector_1]))
+            x1, y1 = self.sectors_to_datasets[sector_1][ticker_1]['Test'].get_element()
+            x2, y2 = self.sectors_to_datasets[sector_2][ticker_2]['Test'].get_element()
+            x.append(self.prepare_object(x1, x2))
+            y.append(self.prepare_label(y1, y2))
+
+        return torch.Tensor(np.array(x)), torch.Tensor(np.array(y))
 
     def prepare_label(self, label_1, label_2):
-        pass
+        label_1 = np.mean(label_1)
+        label_2 = np.mean(label_2)
+        result = None
+        if label_2*label_1 <= 0:
+            result = 0
+        elif abs(label_1 - label_2) >= Config.THRESHOLD_DIFF_BETWEEN_PROFITS:
+            result = 0
+        else:
+            result = 1
+        return result
 
     def prepare_object(self, input_1, input_2):
-        pass
+        return np.array([[input_1], [input_2]])
 
     def print_info(self):
         pass

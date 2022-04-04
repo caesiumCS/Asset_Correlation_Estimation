@@ -18,3 +18,12 @@ class Config:
     OUTPUT_TIME_SERIES_SIZE = 30 # Traiding days
     TRAIN_BATCH_SIZE = 32
     TEST_BATCH_SIZE = 32
+    THRESHOLD_DIFF_BETWEEN_PROFITS = 0.2
+
+    '''
+    Model configs
+    '''
+
+    '''
+    Training configs
+    '''
