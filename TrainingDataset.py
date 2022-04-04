@@ -1,5 +1,4 @@
 import torch
-from websockets import Data
 from TimeSeriesDataset import TimeSeriesDataset
 from torch.utils.data import Dataset
 import pandas as pd
@@ -7,6 +6,7 @@ import numpy as np
 from Config import Config
 import yfinance as yf
 from TimeSeriesDataset import TimeSeriesDataset
+from tqdm import tqdm
 
 class TrainingDataset(Dataset):
 
@@ -23,7 +23,10 @@ class TrainingDataset(Dataset):
         self.right_time_border = pd.to_datetime(Config.FINAL_DATA.replace('-',''), format = '%Y%m%d')
 
         self.sectors_to_datasets = dict()
-        for ind in range(dataframe.shape[0]):
+
+        print('Forming datasets...')
+
+        for ind in tqdm(range(dataframe.shape[0])):
             sector = dataframe.iloc[ind]['GICS Sector']
             ticker = dataframe.iloc[ind]['Symbol']
 
@@ -31,24 +34,27 @@ class TrainingDataset(Dataset):
                 self.sectors_to_datasets[sector] = dict()
             
             data = np.array(yf.Ticker(ticker).history(period='max')[self.left_time_border:self.right_time_border]['Close'])
-            data = np.diff(data) / data[:,1:]
+            data = np.diff(data) / data[1:]
             separate_ind = int(len(data)*self.train_size)
             data_train = data[:separate_ind]
             data_test = data[separate_ind:]
+            self.sectors_to_datasets[sector][ticker] = dict()
             self.sectors_to_datasets[sector][ticker]['Train'] = TimeSeriesDataset(data_train, ticker, sector, self.x_window_size, self.y_window_size)
             self.sectors_to_datasets[sector][ticker]['Test'] = TimeSeriesDataset(data_test, ticker, sector, self.x_window_size, self.y_window_size)
 
             self.sectors = list(self.sectors_to_datasets.keys())
+        
+        print('Datasets created!')
 
     def get_train_len(self):
-        return self.train_size
+        return Config.TRAIN_STEPS
+
+    def get_test_len(self):
+        return Config.TEST_STEPS
 
     def get_random_element_from_array(self, array):
         proba = 1.0/len(array)
         return np.random.choice(array, p = [proba]*len(array))
-
-    def get_test_len(self):
-        return self.test_size
 
     def get_train_batch(self):
         x = []
@@ -57,7 +63,7 @@ class TrainingDataset(Dataset):
             sector_1 = self.get_random_element_from_array(self.sectors)
             sector_2 = self.get_random_element_from_array(self.sectors)
             ticker_1 = self.get_random_element_from_array(list(self.sectors_to_datasets[sector_1]))
-            ticker_2 = self.get_random_element_from_array(list(self.sectors_to_datasets[sector_1]))
+            ticker_2 = self.get_random_element_from_array(list(self.sectors_to_datasets[sector_2]))
             x1, y1 = self.sectors_to_datasets[sector_1][ticker_1]['Train'].get_element()
             x2, y2 = self.sectors_to_datasets[sector_2][ticker_2]['Train'].get_element()
             x.append(self.prepare_object(x1, x2))
@@ -73,7 +79,7 @@ class TrainingDataset(Dataset):
             sector_1 = self.get_random_element_from_array(self.sectors)
             sector_2 = self.get_random_element_from_array(self.sectors)
             ticker_1 = self.get_random_element_from_array(list(self.sectors_to_datasets[sector_1]))
-            ticker_2 = self.get_random_element_from_array(list(self.sectors_to_datasets[sector_1]))
+            ticker_2 = self.get_random_element_from_array(list(self.sectors_to_datasets[sector_2]))
             x1, y1 = self.sectors_to_datasets[sector_1][ticker_1]['Test'].get_element()
             x2, y2 = self.sectors_to_datasets[sector_2][ticker_2]['Test'].get_element()
             x.append(self.prepare_object(x1, x2))
@@ -96,5 +102,38 @@ class TrainingDataset(Dataset):
     def prepare_object(self, input_1, input_2):
         return np.array([[input_1], [input_2]])
 
-    def print_info(self):
-        pass
+    def print_info(self, if_print = True):
+        final_string = 'Sectors : \n'
+        for sector in self.sectors:
+            final_string += '\t'+sector+' : \n'
+            for key in self.sectors_to_datasets[sector].keys():
+                final_string += '\t\t Ticker '+key+'\n\t\t\tTrain size : '+str(len(self.sectors_to_datasets[sector][key]['Train']))+'\n'
+                final_string += '\t\t\tTest_size : '+str(len(self.sectors_to_datasets[sector][key]['Test']))+'\n'
+            final_string += '\n'
+        if if_print:
+            print(final_string)
+        return final_string
+    
+if __name__ == '__main__':
+    file = open('TestLogs/TrainingDatasetTestLog.txt', 'w')
+    print('\nTest and info about Training dataaset.\n\n')
+    dataframe = pd.read_csv(Config.HEAD_DATA_PATH)
+    obj = TrainingDataset(dataframe)
+    file.write(obj.print_info(if_print = False))
+
+    Y = []
+    for step in tqdm(range(obj.get_train_len())):
+        x, y = obj.get_train_batch()
+        for el in y:
+            Y.append(int(el))
+    balance = 'Mean result of labels : '+str(np.array(Y).mean())+'\n\n'
+    print(balance)
+    file.write('\n\n'+balance)
+    file.close()
+    
+    print('Test confirmed!')
+
+
+
+            
+

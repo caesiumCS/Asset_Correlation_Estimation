@@ -19,6 +19,7 @@ class Config:
     TRAIN_BATCH_SIZE = 32
     TEST_BATCH_SIZE = 32
     THRESHOLD_DIFF_BETWEEN_PROFITS = 0.2
+    
 
     '''
     Model configs
@@ -27,3 +28,5 @@ class Config:
     '''
     Training configs
     '''
+    TRAIN_STEPS = 5000
+    TEST_STEPS = 500

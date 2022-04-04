@@ -1,0 +1,1245 @@
+Sectors : 
+	Industrials : 
+		 Ticker MMM
+			Train size : 8964
+			Test_size : 2152
+		 Ticker AOS
+			Train size : 6105
+			Test_size : 1438
+		 Ticker ALK
+			Train size : 6893
+			Test_size : 1635
+		 Ticker AME
+			Train size : 6023
+			Test_size : 1417
+		 Ticker BA
+			Train size : 8964
+			Test_size : 2152
+		 Ticker CHRW
+			Train size : 3344
+			Test_size : 747
+		 Ticker CAT
+			Train size : 8965
+			Test_size : 2152
+		 Ticker CTAS
+			Train size : 6177
+			Test_size : 1456
+		 Ticker CPRT
+			Train size : 4068
+			Test_size : 928
+		 Ticker CSX
+			Train size : 6773
+			Test_size : 1604
+		 Ticker CMI
+			Train size : 8328
+			Test_size : 1993
+		 Ticker DE
+			Train size : 8474
+			Test_size : 2030
+		 Ticker DOV
+			Train size : 6900
+			Test_size : 1636
+		 Ticker ETN
+			Train size : 8473
+			Test_size : 2030
+		 Ticker EMR
+			Train size : 8473
+			Test_size : 2029
+		 Ticker EFX
+			Train size : 6883
+			Test_size : 1632
+		 Ticker EXPD
+			Train size : 5941
+			Test_size : 1396
+		 Ticker FAST
+			Train size : 5392
+			Test_size : 1259
+		 Ticker FDX
+			Train size : 7292
+			Test_size : 1734
+		 Ticker GE
+			Train size : 8963
+			Test_size : 2152
+		 Ticker GD
+			Train size : 8961
+			Test_size : 2151
+		 Ticker GWW
+			Train size : 8313
+			Test_size : 1989
+		 Ticker HON
+			Train size : 8962
+			Test_size : 2152
+		 Ticker IEX
+			Train size : 5032
+			Test_size : 1169
+		 Ticker ITW
+			Train size : 8170
+			Test_size : 1954
+		 Ticker JBHT
+			Train size : 6137
+			Test_size : 1445
+		 Ticker J
+			Train size : 6835
+			Test_size : 1620
+		 Ticker JCI
+			Train size : 5379
+			Test_size : 1256
+		 Ticker LHX
+			Train size : 6538
+			Test_size : 1546
+		 Ticker LMT
+			Train size : 7547
+			Test_size : 1798
+		 Ticker MAS
+			Train size : 6901
+			Test_size : 1637
+		 Ticker NDSN
+			Train size : 6653
+			Test_size : 1575
+		 Ticker NSC
+			Train size : 6455
+			Test_size : 1525
+		 Ticker NOC
+			Train size : 6540
+			Test_size : 1546
+		 Ticker ODFL
+			Train size : 4190
+			Test_size : 959
+		 Ticker PCAR
+			Train size : 6885
+			Test_size : 1633
+		 Ticker PH
+			Train size : 6901
+			Test_size : 1636
+		 Ticker PNR
+			Train size : 8066
+			Test_size : 1928
+		 Ticker PWR
+			Train size : 3279
+			Test_size : 731
+		 Ticker RTX
+			Train size : 8961
+			Test_size : 2152
+		 Ticker RSG
+			Train size : 3202
+			Test_size : 712
+		 Ticker RHI
+			Train size : 6690
+			Test_size : 1584
+		 Ticker ROK
+			Train size : 6539
+			Test_size : 1546
+		 Ticker ROL
+			Train size : 6898
+			Test_size : 1636
+		 Ticker ROP
+			Train size : 4491
+			Test_size : 1034
+		 Ticker SNA
+			Train size : 8277
+			Test_size : 1981
+		 Ticker LUV
+			Train size : 6943
+			Test_size : 1647
+		 Ticker SWK
+			Train size : 6901
+			Test_size : 1636
+		 Ticker TDY
+			Train size : 2920
+			Test_size : 641
+		 Ticker TXT
+			Train size : 8329
+			Test_size : 1993
+		 Ticker TT
+			Train size : 6901
+			Test_size : 1637
+		 Ticker UNP
+			Train size : 6943
+			Test_size : 1647
+		 Ticker UPS
+			Train size : 2927
+			Test_size : 643
+		 Ticker URI
+			Train size : 3309
+			Test_size : 738
+		 Ticker WAB
+			Train size : 3817
+			Test_size : 865
+		 Ticker WM
+			Train size : 5177
+			Test_size : 1206
+
+	Health Care : 
+		 Ticker ABT
+			Train size : 6901
+			Test_size : 1637
+		 Ticker ABMD
+			Train size : 5345
+			Test_size : 1247
+		 Ticker A
+			Train size : 2922
+			Test_size : 642
+		 Ticker ALGN
+			Train size : 2681
+			Test_size : 582
+		 Ticker ABC
+			Train size : 3857
+			Test_size : 876
+		 Ticker AMGN
+			Train size : 6241
+			Test_size : 1471
+		 Ticker ANTM
+			Train size : 2533
+			Test_size : 544
+		 Ticker BAX
+			Train size : 6575
+			Test_size : 1555
+		 Ticker BDX
+			Train size : 8328
+			Test_size : 1993
+		 Ticker BIO
+			Train size : 6713
+			Test_size : 1589
+		 Ticker TECH
+			Train size : 5079
+			Test_size : 1181
+		 Ticker BIIB
+			Train size : 4573
+			Test_size : 1055
+		 Ticker BSX
+			Train size : 4439
+			Test_size : 1021
+		 Ticker BMY
+			Train size : 8474
+			Test_size : 2030
+		 Ticker CAH
+			Train size : 6184
+			Test_size : 1457
+		 Ticker CNC
+			Train size : 2508
+			Test_size : 538
+		 Ticker CERN
+			Train size : 5499
+			Test_size : 1286
+		 Ticker CRL
+			Train size : 2802
+			Test_size : 612
+		 Ticker CI
+			Train size : 6488
+			Test_size : 1533
+		 Ticker COO
+			Train size : 6321
+			Test_size : 1491
+		 Ticker CVS
+			Train size : 8328
+			Test_size : 1993
+		 Ticker DHR
+			Train size : 7095
+			Test_size : 1685
+		 Ticker DVA
+			Train size : 3741
+			Test_size : 846
+		 Ticker XRAY
+			Train size : 5284
+			Test_size : 1232
+		 Ticker EW
+			Train size : 2852
+			Test_size : 624
+		 Ticker GILD
+			Train size : 4504
+			Test_size : 1037
+		 Ticker HSIC
+			Train size : 3738
+			Test_size : 846
+		 Ticker HOLX
+			Train size : 4885
+			Test_size : 1133
+		 Ticker HUM
+			Train size : 6539
+			Test_size : 1546
+		 Ticker IDXX
+			Train size : 4623
+			Test_size : 1067
+		 Ticker ILMN
+			Train size : 2783
+			Test_size : 607
+		 Ticker INCY
+			Train size : 4141
+			Test_size : 947
+		 Ticker ISRG
+			Train size : 2806
+			Test_size : 613
+		 Ticker JNJ
+			Train size : 8964
+			Test_size : 2152
+		 Ticker LH
+			Train size : 4869
+			Test_size : 1129
+		 Ticker LLY
+			Train size : 8473
+			Test_size : 2029
+		 Ticker MCK
+			Train size : 3937
+			Test_size : 895
+		 Ticker MDT
+			Train size : 8276
+			Test_size : 1980
+		 Ticker MRK
+			Train size : 8963
+			Test_size : 2152
+		 Ticker MTD
+			Train size : 3327
+			Test_size : 743
+		 Ticker MOH
+			Train size : 2197
+			Test_size : 460
+		 Ticker PKI
+			Train size : 8327
+			Test_size : 1993
+		 Ticker PFE
+			Train size : 8471
+			Test_size : 2029
+		 Ticker DGX
+			Train size : 3512
+			Test_size : 789
+		 Ticker REGN
+			Train size : 4669
+			Test_size : 1078
+		 Ticker RMD
+			Train size : 3820
+			Test_size : 866
+		 Ticker STE
+			Train size : 4433
+			Test_size : 1019
+		 Ticker SYK
+			Train size : 6881
+			Test_size : 1631
+		 Ticker TFX
+			Train size : 6897
+			Test_size : 1635
+		 Ticker TMO
+			Train size : 6900
+			Test_size : 1636
+		 Ticker UNH
+			Train size : 5968
+			Test_size : 1403
+		 Ticker UHS
+			Train size : 6633
+			Test_size : 1570
+		 Ticker VRTX
+			Train size : 4605
+			Test_size : 1062
+		 Ticker VTRS
+			Train size : 6881
+			Test_size : 1631
+		 Ticker WAT
+			Train size : 3730
+			Test_size : 844
+		 Ticker WST
+			Train size : 6887
+			Test_size : 1633
+		 Ticker ZBH
+			Train size : 2584
+			Test_size : 557
+
+	Information Technology : 
+		 Ticker ACN
+			Train size : 2587
+			Test_size : 558
+		 Ticker ADBE
+			Train size : 5605
+			Test_size : 1312
+		 Ticker ADP
+			Train size : 6902
+			Test_size : 1637
+		 Ticker AKAM
+			Train size : 2933
+			Test_size : 645
+		 Ticker AMD
+			Train size : 6901
+			Test_size : 1637
+		 Ticker APH
+			Train size : 4545
+			Test_size : 1047
+		 Ticker ADI
+			Train size : 6900
+			Test_size : 1636
+		 Ticker ANSS
+			Train size : 3611
+			Test_size : 814
+		 Ticker AAPL
+			Train size : 6751
+			Test_size : 1599
+		 Ticker AMAT
+			Train size : 6896
+			Test_size : 1635
+		 Ticker ADSK
+			Train size : 5832
+			Test_size : 1369
+		 Ticker CDNS
+			Train size : 5439
+			Test_size : 1271
+		 Ticker CSCO
+			Train size : 4894
+			Test_size : 1135
+		 Ticker CTXS
+			Train size : 3719
+			Test_size : 841
+		 Ticker CTSH
+			Train size : 3209
+			Test_size : 713
+		 Ticker GLW
+			Train size : 6539
+			Test_size : 1546
+		 Ticker DXC
+			Train size : 6539
+			Test_size : 1546
+		 Ticker FFIV
+			Train size : 3016
+			Test_size : 665
+		 Ticker FIS
+			Train size : 2603
+			Test_size : 562
+		 Ticker FISV
+			Train size : 5573
+			Test_size : 1304
+		 Ticker IT
+			Train size : 4160
+			Test_size : 951
+		 Ticker GPN
+			Train size : 2689
+			Test_size : 584
+		 Ticker HPQ
+			Train size : 8964
+			Test_size : 2152
+		 Ticker INTC
+			Train size : 6901
+			Test_size : 1636
+		 Ticker IBM
+			Train size : 8963
+			Test_size : 2152
+		 Ticker INTU
+			Train size : 4274
+			Test_size : 980
+		 Ticker JKHY
+			Train size : 5554
+			Test_size : 1300
+		 Ticker JNPR
+			Train size : 3004
+			Test_size : 662
+		 Ticker KLAC
+			Train size : 6745
+			Test_size : 1598
+		 Ticker LRCX
+			Train size : 6063
+			Test_size : 1427
+		 Ticker MCHP
+			Train size : 4270
+			Test_size : 979
+		 Ticker MU
+			Train size : 6049
+			Test_size : 1424
+		 Ticker MSFT
+			Train size : 5690
+			Test_size : 1334
+		 Ticker MSI
+			Train size : 8964
+			Test_size : 2152
+		 Ticker NTAP
+			Train size : 3729
+			Test_size : 843
+		 Ticker NLOK
+			Train size : 5026
+			Test_size : 1168
+		 Ticker NVDA
+			Train size : 3090
+			Test_size : 684
+		 Ticker ORCL
+			Train size : 5691
+			Test_size : 1334
+		 Ticker PAYX
+			Train size : 6190
+			Test_size : 1459
+		 Ticker PTC
+			Train size : 4933
+			Test_size : 1144
+		 Ticker QCOM
+			Train size : 4525
+			Test_size : 1043
+		 Ticker CRM
+			Train size : 2001
+			Test_size : 411
+		 Ticker STX
+			Train size : 2308
+			Test_size : 488
+		 Ticker SWKS
+			Train size : 5869
+			Test_size : 1379
+		 Ticker SNPS
+			Train size : 4485
+			Test_size : 1033
+		 Ticker TER
+			Train size : 8279
+			Test_size : 1981
+		 Ticker TXN
+			Train size : 8475
+			Test_size : 2030
+		 Ticker TRMB
+			Train size : 4809
+			Test_size : 1114
+		 Ticker TYL
+			Train size : 6841
+			Test_size : 1621
+		 Ticker VRSN
+			Train size : 3286
+			Test_size : 733
+		 Ticker WDC
+			Train size : 7164
+			Test_size : 1702
+		 Ticker ZBRA
+			Train size : 4593
+			Test_size : 1059
+
+	Communication Services : 
+		 Ticker ATVI
+			Train size : 4120
+			Test_size : 941
+		 Ticker GOOGL
+			Train size : 1969
+			Test_size : 403
+		 Ticker GOOG
+			Train size : 1969
+			Test_size : 403
+		 Ticker T
+			Train size : 6156
+			Test_size : 1450
+		 Ticker CMCSA
+			Train size : 6886
+			Test_size : 1633
+		 Ticker DISH
+			Train size : 3814
+			Test_size : 865
+		 Ticker DIS
+			Train size : 8963
+			Test_size : 2152
+		 Ticker EA
+			Train size : 4977
+			Test_size : 1156
+		 Ticker IPG
+			Train size : 6881
+			Test_size : 1632
+		 Ticker LUMN
+			Train size : 6863
+			Test_size : 1627
+		 Ticker MTCH
+			Train size : 4303
+			Test_size : 987
+		 Ticker NFLX
+			Train size : 2420
+			Test_size : 516
+		 Ticker OMC
+			Train size : 6857
+			Test_size : 1625
+		 Ticker TTWO
+			Train size : 3434
+			Test_size : 770
+		 Ticker VZ
+			Train size : 6156
+			Test_size : 1450
+
+	Consumer Staples : 
+		 Ticker ADM
+			Train size : 6901
+			Test_size : 1637
+		 Ticker MO
+			Train size : 8964
+			Test_size : 2152
+		 Ticker CPB
+			Train size : 8325
+			Test_size : 1993
+		 Ticker CHD
+			Train size : 6733
+			Test_size : 1594
+		 Ticker CLX
+			Train size : 8325
+			Test_size : 1993
+		 Ticker KO
+			Train size : 8965
+			Test_size : 2152
+		 Ticker CL
+			Train size : 8290
+			Test_size : 1984
+		 Ticker CAG
+			Train size : 6901
+			Test_size : 1637
+		 Ticker STZ
+			Train size : 4474
+			Test_size : 1030
+		 Ticker COST
+			Train size : 5625
+			Test_size : 1318
+		 Ticker EL
+			Train size : 3731
+			Test_size : 844
+		 Ticker GIS
+			Train size : 6902
+			Test_size : 1637
+		 Ticker HSY
+			Train size : 6899
+			Test_size : 1636
+		 Ticker HRL
+			Train size : 6863
+			Test_size : 1627
+		 Ticker K
+			Train size : 8325
+			Test_size : 1992
+		 Ticker KMB
+			Train size : 6901
+			Test_size : 1637
+		 Ticker KR
+			Train size : 8962
+			Test_size : 2152
+		 Ticker MKC
+			Train size : 8225
+			Test_size : 1967
+		 Ticker TAP
+			Train size : 7842
+			Test_size : 1872
+		 Ticker MDLZ
+			Train size : 2608
+			Test_size : 563
+		 Ticker MNST
+			Train size : 5422
+			Test_size : 1267
+		 Ticker PEP
+			Train size : 8471
+			Test_size : 2029
+		 Ticker PG
+			Train size : 8963
+			Test_size : 2152
+		 Ticker SJM
+			Train size : 3940
+			Test_size : 896
+		 Ticker SYY
+			Train size : 7490
+			Test_size : 1784
+		 Ticker TSN
+			Train size : 6840
+			Test_size : 1621
+		 Ticker WMT
+			Train size : 8410
+			Test_size : 2014
+		 Ticker WBA
+			Train size : 6901
+			Test_size : 1637
+
+	Consumer Discretionary : 
+		 Ticker AAP
+			Train size : 2516
+			Test_size : 540
+		 Ticker AMZN
+			Train size : 3429
+			Test_size : 769
+		 Ticker AZO
+			Train size : 4669
+			Test_size : 1078
+		 Ticker BBWI
+			Train size : 6489
+			Test_size : 1534
+		 Ticker BBY
+			Train size : 5868
+			Test_size : 1378
+		 Ticker BKNG
+			Train size : 3052
+			Test_size : 674
+		 Ticker BWA
+			Train size : 4189
+			Test_size : 958
+		 Ticker KMX
+			Train size : 3485
+			Test_size : 783
+		 Ticker CCL
+			Train size : 5414
+			Test_size : 1265
+		 Ticker DHI
+			Train size : 4429
+			Test_size : 1018
+		 Ticker DRI
+			Train size : 3838
+			Test_size : 871
+		 Ticker DLTR
+			Train size : 3873
+			Test_size : 880
+		 Ticker DPZ
+			Train size : 1990
+			Test_size : 409
+		 Ticker EBAY
+			Train size : 3155
+			Test_size : 700
+		 Ticker F
+			Train size : 8474
+			Test_size : 2030
+		 Ticker GRMN
+			Train size : 2709
+			Test_size : 588
+		 Ticker GPC
+			Train size : 6901
+			Test_size : 1637
+		 Ticker HAS
+			Train size : 6861
+			Test_size : 1627
+		 Ticker HD
+			Train size : 6574
+			Test_size : 1555
+		 Ticker LEN
+			Train size : 6898
+			Test_size : 1636
+		 Ticker LKQ
+			Train size : 2144
+			Test_size : 447
+		 Ticker LOW
+			Train size : 6900
+			Test_size : 1636
+		 Ticker MAR
+			Train size : 3258
+			Test_size : 726
+		 Ticker MCD
+			Train size : 8964
+			Test_size : 2152
+		 Ticker MGM
+			Train size : 5091
+			Test_size : 1184
+		 Ticker MHK
+			Train size : 4464
+			Test_size : 1027
+		 Ticker NWL
+			Train size : 6869
+			Test_size : 1628
+		 Ticker NKE
+			Train size : 6757
+			Test_size : 1600
+		 Ticker NVR
+			Train size : 5805
+			Test_size : 1363
+		 Ticker ORLY
+			Train size : 4242
+			Test_size : 972
+		 Ticker PENN
+			Train size : 4029
+			Test_size : 919
+		 Ticker POOL
+			Train size : 3732
+			Test_size : 844
+		 Ticker PHM
+			Train size : 6892
+			Test_size : 1634
+		 Ticker PVH
+			Train size : 6877
+			Test_size : 1631
+		 Ticker RL
+			Train size : 3414
+			Test_size : 765
+		 Ticker ROST
+			Train size : 5809
+			Test_size : 1364
+		 Ticker RCL
+			Train size : 4249
+			Test_size : 974
+		 Ticker SBUX
+			Train size : 4417
+			Test_size : 1016
+		 Ticker TPR
+			Train size : 2744
+			Test_size : 597
+		 Ticker TGT
+			Train size : 8329
+			Test_size : 1993
+		 Ticker TJX
+			Train size : 5429
+			Test_size : 1269
+		 Ticker TSCO
+			Train size : 4057
+			Test_size : 925
+		 Ticker VFC
+			Train size : 6900
+			Test_size : 1636
+		 Ticker WHR
+			Train size : 8329
+			Test_size : 1994
+		 Ticker WYNN
+			Train size : 2333
+			Test_size : 495
+		 Ticker YUM
+			Train size : 3361
+			Test_size : 751
+
+	Utilities : 
+		 Ticker AES
+			Train size : 4621
+			Test_size : 1066
+		 Ticker LNT
+			Train size : 8197
+			Test_size : 1961
+		 Ticker AEE
+			Train size : 3301
+			Test_size : 737
+		 Ticker AEP
+			Train size : 8963
+			Test_size : 2152
+		 Ticker ATO
+			Train size : 6117
+			Test_size : 1441
+		 Ticker CNP
+			Train size : 8964
+			Test_size : 2152
+		 Ticker CMS
+			Train size : 8318
+			Test_size : 1991
+		 Ticker ED
+			Train size : 8961
+			Test_size : 2151
+		 Ticker D
+			Train size : 6900
+			Test_size : 1636
+		 Ticker DTE
+			Train size : 8959
+			Test_size : 2151
+		 Ticker DUK
+			Train size : 6901
+			Test_size : 1637
+		 Ticker EIX
+			Train size : 8290
+			Test_size : 1984
+		 Ticker ETR
+			Train size : 8473
+			Test_size : 2030
+		 Ticker EVRG
+			Train size : 8295
+			Test_size : 1985
+		 Ticker ES
+			Train size : 8306
+			Test_size : 1988
+		 Ticker EXC
+			Train size : 8291
+			Test_size : 1984
+		 Ticker FE
+			Train size : 3330
+			Test_size : 744
+		 Ticker NEE
+			Train size : 8330
+			Test_size : 1994
+		 Ticker NI
+			Train size : 8312
+			Test_size : 1989
+		 Ticker NRG
+			Train size : 2112
+			Test_size : 439
+		 Ticker PNW
+			Train size : 8326
+			Test_size : 1993
+		 Ticker PPL
+			Train size : 6899
+			Test_size : 1636
+		 Ticker PEG
+			Train size : 6943
+			Test_size : 1647
+		 Ticker SRE
+			Train size : 3204
+			Test_size : 712
+		 Ticker SO
+			Train size : 6539
+			Test_size : 1546
+		 Ticker WEC
+			Train size : 6901
+			Test_size : 1636
+		 Ticker XEL
+			Train size : 8322
+			Test_size : 1992
+
+	Financials : 
+		 Ticker AFL
+			Train size : 6891
+			Test_size : 1634
+		 Ticker AIG
+			Train size : 7169
+			Test_size : 1703
+		 Ticker ALL
+			Train size : 4229
+			Test_size : 968
+		 Ticker AXP
+			Train size : 8389
+			Test_size : 2009
+		 Ticker AON
+			Train size : 6860
+			Test_size : 1626
+		 Ticker AIZ
+			Train size : 2077
+			Test_size : 430
+		 Ticker BAC
+			Train size : 8298
+			Test_size : 1986
+		 Ticker WRB
+			Train size : 7570
+			Test_size : 1804
+		 Ticker BLK
+			Train size : 2949
+			Test_size : 649
+		 Ticker BK
+			Train size : 8228
+			Test_size : 1968
+		 Ticker BRO
+			Train size : 5511
+			Test_size : 1289
+		 Ticker COF
+			Train size : 3933
+			Test_size : 895
+		 Ticker SCHW
+			Train size : 5379
+			Test_size : 1256
+		 Ticker CB
+			Train size : 4267
+			Test_size : 978
+		 Ticker CINF
+			Train size : 6861
+			Test_size : 1627
+		 Ticker C
+			Train size : 7546
+			Test_size : 1798
+		 Ticker CME
+			Train size : 2310
+			Test_size : 489
+		 Ticker CMA
+			Train size : 6869
+			Test_size : 1629
+		 Ticker RE
+			Train size : 3757
+			Test_size : 850
+		 Ticker FDS
+			Train size : 3605
+			Test_size : 813
+		 Ticker FITB
+			Train size : 6712
+			Test_size : 1589
+		 Ticker BEN
+			Train size : 6160
+			Test_size : 1451
+		 Ticker AJG
+			Train size : 6017
+			Test_size : 1415
+		 Ticker GL
+			Train size : 6789
+			Test_size : 1608
+		 Ticker GS
+			Train size : 3033
+			Test_size : 670
+		 Ticker HIG
+			Train size : 3715
+			Test_size : 840
+		 Ticker HBAN
+			Train size : 6853
+			Test_size : 1624
+		 Ticker IVZ
+			Train size : 3777
+			Test_size : 855
+		 Ticker JPM
+			Train size : 6901
+			Test_size : 1637
+		 Ticker KEY
+			Train size : 5356
+			Test_size : 1250
+		 Ticker LNC
+			Train size : 6902
+			Test_size : 1637
+		 Ticker L
+			Train size : 6901
+			Test_size : 1637
+		 Ticker MTB
+			Train size : 6816
+			Test_size : 1615
+		 Ticker MKTX
+			Train size : 1925
+			Test_size : 392
+		 Ticker MMC
+			Train size : 8329
+			Test_size : 1993
+		 Ticker MET
+			Train size : 2846
+			Test_size : 623
+		 Ticker MCO
+			Train size : 3941
+			Test_size : 896
+		 Ticker MS
+			Train size : 4286
+			Test_size : 983
+		 Ticker NDAQ
+			Train size : 2397
+			Test_size : 511
+		 Ticker NTRS
+			Train size : 6801
+			Test_size : 1612
+		 Ticker PBCT
+			Train size : 5218
+			Test_size : 1216
+		 Ticker PNC
+			Train size : 7535
+			Test_size : 1795
+		 Ticker PFG
+			Train size : 2537
+			Test_size : 545
+		 Ticker PGR
+			Train size : 6847
+			Test_size : 1623
+		 Ticker PRU
+			Train size : 2508
+			Test_size : 538
+		 Ticker RJF
+			Train size : 6167
+			Test_size : 1453
+		 Ticker RF
+			Train size : 6861
+			Test_size : 1626
+		 Ticker SPGI
+			Train size : 8322
+			Test_size : 1992
+		 Ticker SBNY
+			Train size : 2051
+			Test_size : 424
+		 Ticker STT
+			Train size : 6888
+			Test_size : 1633
+		 Ticker SIVB
+			Train size : 5274
+			Test_size : 1230
+		 Ticker TROW
+			Train size : 5678
+			Test_size : 1331
+		 Ticker TRV
+			Train size : 7764
+			Test_size : 1852
+		 Ticker TFC
+			Train size : 6525
+			Test_size : 1543
+		 Ticker USB
+			Train size : 7537
+			Test_size : 1796
+		 Ticker WFC
+			Train size : 8471
+			Test_size : 2029
+		 Ticker WTW
+			Train size : 2608
+			Test_size : 563
+		 Ticker ZION
+			Train size : 6813
+			Test_size : 1614
+
+	Materials : 
+		 Ticker APD
+			Train size : 6901
+			Test_size : 1637
+		 Ticker ALB
+			Train size : 4083
+			Test_size : 932
+		 Ticker AVY
+			Train size : 8315
+			Test_size : 1990
+		 Ticker BLL
+			Train size : 8262
+			Test_size : 1977
+		 Ticker DD
+			Train size : 8474
+			Test_size : 2030
+		 Ticker EMN
+			Train size : 4121
+			Test_size : 942
+		 Ticker ECL
+			Train size : 8295
+			Test_size : 1985
+		 Ticker FMC
+			Train size : 6901
+			Test_size : 1637
+		 Ticker FCX
+			Train size : 3805
+			Test_size : 862
+		 Ticker IP
+			Train size : 8964
+			Test_size : 2152
+		 Ticker IFF
+			Train size : 7961
+			Test_size : 1902
+		 Ticker LIN
+			Train size : 4423
+			Test_size : 1017
+		 Ticker MLM
+			Train size : 4084
+			Test_size : 932
+		 Ticker MOS
+			Train size : 5312
+			Test_size : 1239
+		 Ticker NEM
+			Train size : 6901
+			Test_size : 1637
+		 Ticker NUE
+			Train size : 6901
+			Test_size : 1637
+		 Ticker PKG
+			Train size : 2884
+			Test_size : 632
+		 Ticker PPG
+			Train size : 6901
+			Test_size : 1637
+		 Ticker SEE
+			Train size : 6901
+			Test_size : 1637
+		 Ticker SHW
+			Train size : 6901
+			Test_size : 1637
+		 Ticker VMC
+			Train size : 8228
+			Test_size : 1968
+
+	Real Estate : 
+		 Ticker ARE
+			Train size : 3422
+			Test_size : 767
+		 Ticker AMT
+			Train size : 3271
+			Test_size : 729
+		 Ticker AVB
+			Train size : 4071
+			Test_size : 929
+		 Ticker BXP
+			Train size : 3411
+			Test_size : 764
+		 Ticker CBRE
+			Train size : 2007
+			Test_size : 413
+		 Ticker CCI
+			Train size : 3176
+			Test_size : 705
+		 Ticker DLR
+			Train size : 1929
+			Test_size : 393
+		 Ticker DRE
+			Train size : 5677
+			Test_size : 1330
+		 Ticker EQIX
+			Train size : 2775
+			Test_size : 605
+		 Ticker EQR
+			Train size : 4189
+			Test_size : 959
+		 Ticker ESS
+			Train size : 4025
+			Test_size : 917
+		 Ticker EXR
+			Train size : 1971
+			Test_size : 404
+		 Ticker FRT
+			Train size : 7729
+			Test_size : 1844
+		 Ticker PEAK
+			Train size : 5853
+			Test_size : 1374
+		 Ticker HST
+			Train size : 6901
+			Test_size : 1636
+		 Ticker IRM
+			Train size : 3688
+			Test_size : 833
+		 Ticker KIM
+			Train size : 4537
+			Test_size : 1045
+		 Ticker MAA
+			Train size : 4095
+			Test_size : 935
+		 Ticker PLD
+			Train size : 3323
+			Test_size : 742
+		 Ticker PSA
+			Train size : 6729
+			Test_size : 1593
+		 Ticker O
+			Train size : 3950
+			Test_size : 899
+		 Ticker REG
+			Train size : 4142
+			Test_size : 947
+		 Ticker SBAC
+			Train size : 3009
+			Test_size : 664
+		 Ticker SPG
+			Train size : 4121
+			Test_size : 941
+		 Ticker UDR
+			Train size : 6366
+			Test_size : 1503
+		 Ticker VTR
+			Train size : 3435
+			Test_size : 770
+		 Ticker VNO
+			Train size : 6591
+			Test_size : 1559
+		 Ticker WELL
+			Train size : 6637
+			Test_size : 1570
+		 Ticker WY
+			Train size : 8290
+			Test_size : 1984
+
+	Energy : 
+		 Ticker APA
+			Train size : 7070
+			Test_size : 1679
+		 Ticker BKR
+			Train size : 5475
+			Test_size : 1280
+		 Ticker CVX
+			Train size : 8963
+			Test_size : 2152
+		 Ticker COP
+			Train size : 6538
+			Test_size : 1546
+		 Ticker CTRA
+			Train size : 4889
+			Test_size : 1134
+		 Ticker DVN
+			Train size : 5770
+			Test_size : 1354
+		 Ticker EOG
+			Train size : 4969
+			Test_size : 1154
+		 Ticker XOM
+			Train size : 8962
+			Test_size : 2152
+		 Ticker HAL
+			Train size : 8474
+			Test_size : 2030
+		 Ticker HES
+			Train size : 6902
+			Test_size : 1637
+		 Ticker MRO
+			Train size : 8962
+			Test_size : 2152
+		 Ticker OXY
+			Train size : 6539
+			Test_size : 1546
+		 Ticker OKE
+			Train size : 6789
+			Test_size : 1608
+		 Ticker PXD
+			Train size : 3382
+			Test_size : 757
+		 Ticker SLB
+			Train size : 6538
+			Test_size : 1546
+		 Ticker VLO
+			Train size : 6536
+			Test_size : 1545
+		 Ticker WMB
+			Train size : 6538
+			Test_size : 1546
+
+
+
+Mean result of labels : 0.5052
+
