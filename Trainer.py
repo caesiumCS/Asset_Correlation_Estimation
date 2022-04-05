@@ -7,6 +7,8 @@ import os
 import torch
 from time import time
 import shutil
+import pickle
+from matplotlib import pyplot as plt
 
 class Trainer:
 
@@ -38,7 +40,12 @@ class Trainer:
         self.logs = open(self.experiment_path+'/logx.txt', 'w')
 
     def save_model(self):
-        pass
+        torch.save(self.model, self.experiment_path+'/last_checkpoint.trch')
+        if len(self.test_loss) < 2:
+            torch.save(self.model, self.experiment_path+'/best_checkpoint.trch')
+        else:
+            if self.test_loss[-1] < self.test_loss[-2]:
+                torch.save(self.model, self.experiment_path+'/best_checkpoint.trch')
 
     def print_log(self, string):
         self.logs.write(string + '\n')
@@ -97,4 +104,19 @@ class Trainer:
         self.save_model()
 
     def train(self):
-        pass
+        print('\nStart training...')
+        try:
+            for epoch in range(1, Config.EPOCHS+1):
+                self.train_one_epoch(epoch)
+                self.test_one_epoch(epoch)
+            with open(self.experiment_path+'/train_loss_history.pickle', 'wb') as handle:
+                pickle.dump(self.train_loss, handle)
+            with open(self.experiment_path+'/test_loss_history.pickle', 'wb') as handle:
+                pickle.dump(self.test_loss, handle)
+            #plt.figure(figsize=(13, 9))
+            #plt.plot(self.train_loss)
+            #plt.plot(self.test_loss)
+            #plt.savefig(self.experiment_path+'/loss_plot.fig')
+            #TODO add plots
+        except KeyboardInterrupt:
+            self.print_log('Experiment stoped by user! No plots will be created.')
