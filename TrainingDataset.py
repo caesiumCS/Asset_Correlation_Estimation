@@ -114,18 +114,22 @@ class TrainingDataset(Dataset):
             print(final_string)
         return final_string
     
+    def count_balance(self):
+        Y = []
+        for step in tqdm(range(self.get_train_len())):
+            x, y = self.get_train_batch()
+            for el in y:
+                Y.append(int(el))
+        return np.array(Y).mean()
+    
 if __name__ == '__main__':
-    file = open('TestLogs/TrainingDatasetTestLog.txt', 'w')
 
     print('\nTest and info about Training dataaset.\n\n')
+
+    file = open('TestLogs/TrainingDatasetTestLog.txt', 'w')
     obj = TrainingDataset()
     file.write(obj.print_info(if_print = False))
-    Y = []
-    for step in tqdm(range(obj.get_train_len())):
-        x, y = obj.get_train_batch()
-        for el in y:
-            Y.append(int(el))
-    balance = 'Mean result of labels : '+str(np.array(Y).mean())+'\n\n'
+    balance = 'Mean result of labels : '+str(obj.count_balance())+'\n'
     print(balance)
     file.write('\n\n'+balance)
     file.close()

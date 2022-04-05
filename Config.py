@@ -19,14 +19,27 @@ class Config:
     TRAIN_BATCH_SIZE = 32
     TEST_BATCH_SIZE = 32
     THRESHOLD_DIFF_BETWEEN_PROFITS = 0.2
-    
+
+    '''
+    Meta information about experiment
+    '''
+    EXPERIMENT_NUMBER = 1
+    DATE = '04.04.2020'
+    EXPERIMENT_FOLDER_NAME = DATE + '_'+str(EXPERIMENT_NUMBER)
 
     '''
     Model configs
     '''
+    MODEL_NAME = 'CNN_Model_1'
+    ADDITIONAL_INFO = 'CNN Model, with two inputs. First version.'
+    LR = 0.0007
+    LOSS = 'BCELoss' # field for saving and reading experiment logs
 
     '''
     Training configs
     '''
-    TRAIN_STEPS = 5000
+    TRAIN_STEPS = 1500 # number of batches for one epoch
     TEST_STEPS = 500
+    EPOCHS = 150
+    STEPS_TO_PRINT = 300 # number of steps to print info about learning
+    
