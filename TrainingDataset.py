@@ -7,6 +7,7 @@ from Config import Config
 import yfinance as yf
 from TimeSeriesDataset import TimeSeriesDataset
 from tqdm import tqdm
+import pickle
 
 class TrainingDataset(Dataset):
 
@@ -88,16 +89,17 @@ class TrainingDataset(Dataset):
         return torch.Tensor(np.array(x)), torch.Tensor(np.array(y))
 
     def prepare_label(self, label_1, label_2):
-        label_1 = np.mean(label_1)
-        label_2 = np.mean(label_2)
-        result = None
-        if label_2*label_1 <= 0:
-            result = 0
-        elif abs(label_1 - label_2) >= Config.THRESHOLD_DIFF_BETWEEN_PROFITS:
-            result = 0
-        else:
-            result = 1
-        return result
+        label_1[np.isnan(label_1)] = 0
+        label_2[np.isnan(label_2)] = 0
+        x_1 = 1
+        x_2 = 1
+        for i in range(len(label_1)):
+            x_1 = x_1*(1+label_1[i])
+            x_2 = x_2*(1+label_2[i])
+        x_1 = 1 - x_1
+        x_2 = 1 - x_2
+        return 1 if abs(x_1 - x_2) >= Config.THRESHOLD_DIFF_BETWEEN_PROFITS else 0
+        
 
     def prepare_object(self, input_1, input_2):
         return np.array([[input_1], [input_2]])
@@ -133,6 +135,9 @@ if __name__ == '__main__':
     print(balance)
     file.write('\n\n'+balance)
     file.close()
+
+    with open('dataset.pickle', 'wb') as handle:
+        pickle.dump(obj, handle)
 
     print('Test confirmed!')
 

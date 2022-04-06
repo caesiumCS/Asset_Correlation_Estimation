@@ -16,6 +16,7 @@ class HeadDataDownloader:
         left_time = pd.to_datetime(self.config.START_DATA.replace('-', ''), format='%Y%m%d')
         right_time = pd.to_datetime(self.config.FINAL_DATA.replace('-', ''), format='%Y%m%d')   
         tickers_to_save = []
+        print('Creating head dataset file...')
         for ticker in tqdm(np.unique(root_data['Symbol'])):
             x = yf.Ticker(ticker)
             x = x.history(period='max')
@@ -29,6 +30,7 @@ class HeadDataDownloader:
             
         new_data = root_data[ root_data['Symbol'].apply(f) ]
         new_data.to_csv(self.config.HEAD_DATA_PATH, index=False)
+        print('Head dataset created!')
 
 if __name__ == '__main__':
     print('Testing HeadDataDownloader class...')

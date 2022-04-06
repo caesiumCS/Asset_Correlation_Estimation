@@ -978,8 +978,8 @@ Sectors :
 			Train size : 6801
 			Test_size : 1612
 		 Ticker PBCT
-			Train size : 5218
-			Test_size : 1216
+			Train size : 5205
+			Test_size : 1212
 		 Ticker PNC
 			Train size : 7535
 			Test_size : 1795
@@ -1008,8 +1008,8 @@ Sectors :
 			Train size : 6888
 			Test_size : 1633
 		 Ticker SIVB
-			Train size : 5274
-			Test_size : 1230
+			Train size : 5273
+			Test_size : 1229
 		 Ticker TROW
 			Train size : 5678
 			Test_size : 1331
@@ -1241,5 +1241,4 @@ Sectors :
 
 
 
-Mean result of labels : 0.5052
-
+Mean result of labels : 0.564970238095238
