@@ -16,6 +16,8 @@ class Trainer:
         
         self.train_loss = []
         self.test_loss = []
+        
+        # TODO add accuracy history and plots for them
 
         self.model = CNN_TS_Model()
         self.dataset = TrainingDataset()
@@ -103,6 +105,15 @@ class Trainer:
         self.test_loss.append(total_loss)
         self.save_model()
 
+    def create_loss_plots(self):
+        plt.figure(figsize=(19, 7))
+        plt.title('Train and test loss history', font = 'Times New Roman')
+        plt.plot(self.train_loss, label = 'Train loss')
+        plt.plot(self.test_loss, label = 'Test loss')
+        plt.legend()
+        plt.savefig(self.experiment_path+'/Train&Test_loss_plot.pdf')
+
+
     def train(self):
         print('\nStart training...')
         try:
@@ -113,10 +124,6 @@ class Trainer:
                 pickle.dump(self.train_loss, handle)
             with open(self.experiment_path+'/test_loss_history.pickle', 'wb') as handle:
                 pickle.dump(self.test_loss, handle)
-            #plt.figure(figsize=(13, 9))
-            #plt.plot(self.train_loss)
-            #plt.plot(self.test_loss)
-            #plt.savefig(self.experiment_path+'/loss_plot.fig')
-            #TODO add plots
+            self.create_loss_plots()
         except KeyboardInterrupt:
             self.print_log('Experiment stoped by user! No plots will be created.')
