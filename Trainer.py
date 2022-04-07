@@ -36,13 +36,14 @@ class Trainer:
         os.makedirs(self.experiment_path+'/Codes')
         os.makedirs(self.experiment_path+'/Plots')
 
-        shutil.copyfile('Config.py', self.experiment_path+'Codes/Config.py')
-        shutil.copyfile('Model.py', self.experiment_path+'Codes/Model.py')
-        shutil.copyfile('TrainingDataset.py', self.experiment_path+'Codes/TrainingDataset.py')
-        shutil.copyfile('TimeSeriesDataset.py', self.experiment_path+'Codes/TimeSeriesDataset.py')
-        shutil.copyfile('Trainer.py', self.experiment_path+'Codes/Trainer.py')
+        shutil.copyfile('Config.py', self.experiment_path+'/Codes/Config.py')
+        shutil.copyfile('Model.py', self.experiment_path+'/Codes/Model.py')
+        shutil.copyfile('TrainingDataset.py', self.experiment_path+'/Codes/TrainingDataset.py')
+        shutil.copyfile('TimeSeriesDataset.py', self.experiment_path+'/Codes/TimeSeriesDataset.py')
+        shutil.copyfile('Trainer.py', self.experiment_path+'/Codes/Trainer.py')
 
-        data_info_string = str(self.dataset.count_balance()) + '\n\n' + self.dataset.print_info(if_print = False)
+        #data_info_string = str(self.dataset.count_balance()) + '\n\n' + self.dataset.print_info(if_print = False)
+        data_info_string = self.dataset.print_info(if_print = False)
         file = open(self.experiment_path+'/Logs/dataset_info.txt', 'w')
         file.write(data_info_string)
         file.close()
@@ -139,16 +140,15 @@ class Trainer:
             for epoch in range(1, Config.EPOCHS+1):
                 self.train_one_epoch(epoch)
                 self.test_one_epoch(epoch)
-            with open(self.experiment_path+'/Binary_files_and_models/train_loss_history.pickle', 'wb') as handle:
-                pickle.dump(self.train_loss, handle)
-            with open(self.experiment_path+'/Binary_files_and_models/test_loss_history.pickle', 'wb') as handle:
-                pickle.dump(self.test_loss, handle)
+            self.save_history()
             self.create_loss_plots()
         except KeyboardInterrupt:
             self.print_log('Experiment stoped by user!')
-            with open(self.experiment_path+'/Binary_files_and_models/train_loss_history.pickle', 'wb') as handle:
-                pickle.dump(self.train_loss, handle)
-            with open(self.experiment_path+'/Binary_files_and_models/test_loss_history.pickle', 'wb') as handle:
-                pickle.dump(self.test_loss, handle)
+            self.save_history()
             self.create_loss_plots()
-
+    
+    def save_history(self):
+        with open(self.experiment_path+'/Binary_files_and_models/train_loss_history.pickle', 'wb') as handle:
+            pickle.dump(self.train_loss, handle)
+        with open(self.experiment_path+'/Binary_files_and_models/test_loss_history.pickle', 'wb') as handle:
+            pickle.dump(self.test_loss, handle)

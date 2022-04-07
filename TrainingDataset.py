@@ -88,7 +88,10 @@ class TrainingDataset(Dataset):
         return torch.Tensor(np.array(x)), torch.Tensor(np.array(y))
 
     def prepare_label(self, label_1, label_2):
-        return np.corrcoef(label_1, label_2)[0][1]
+        res =  np.corrcoef(label_1, label_2)[0][1]
+        if str(res) == 'nan':
+            return 0
+        return res
         
 
     def prepare_object(self, input_1, input_2):
