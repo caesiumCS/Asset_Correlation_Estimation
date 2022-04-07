@@ -34,7 +34,7 @@ class CNN_TS_Model(nn.Module):
             nn.BatchNorm1d(128),
             
             nn.Linear(128, 1),
-            nn.Sigmoid()
+            nn.Tanh()
 
         )
 

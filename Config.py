@@ -14,7 +14,7 @@ class Config:
     '''
     TRAIN_SIZE = 0.8
     TEST_SIZE = 1 - TRAIN_SIZE
-    INPUT_TIME_SERIES_SIZE = 120 # Traiding days 
+    INPUT_TIME_SERIES_SIZE = 255 # Traiding days 
     OUTPUT_TIME_SERIES_SIZE = 30 # Traiding days
     TRAIN_BATCH_SIZE = 64
     TEST_BATCH_SIZE = 64
@@ -24,8 +24,8 @@ class Config:
     '''
     Meta information about experiment
     '''
-    EXPERIMENT_NUMBER = 2
-    DATE = '04.04.2020'
+    EXPERIMENT_NUMBER = 1
+    DATE = '07.04.2020'
     EXPERIMENT_FOLDER_NAME = DATE + '_'+str(EXPERIMENT_NUMBER)
 
     '''
@@ -43,4 +43,5 @@ class Config:
     TEST_STEPS = 9000
     EPOCHS = 100
     STEPS_TO_PRINT = 300 # number of steps to print info about learning
+    DEVICE = 'cpu'
     

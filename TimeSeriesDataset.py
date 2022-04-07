@@ -12,8 +12,10 @@ class TimeSeriesDataset(Dataset):
         self.ind = 0
 
     def __getitem__(self, index):
-        x = self.timeseries[index:index+self.x_window_size]
-        y = self.timeseries[index+self.x_window_size:index+self.x_window_size+self.y_window_size]
+        x = self.timeseries[index:index+self.x_window_size+1]
+        x = np.diff(x) / x[1:]
+        x[np.isnan(x)] = 0
+        y = self.timeseries[index+self.x_window_size+1:index+self.x_window_size+self.y_window_size+1]
         return x, y
 
     def get_element(self):

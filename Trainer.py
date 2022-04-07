@@ -22,7 +22,7 @@ class Trainer:
         self.model = CNN_TS_Model()
         self.dataset = TrainingDataset()
         
-        self.criterion = nn.BCELoss()
+        self.criterion = nn.L1Loss()
         self.optimizer = torch.optim.Adam(self.model.parameters(), Config.LR)
 
         self.experiment_path = 'Experiments/'+Config.EXPERIMENT_FOLDER_NAME
@@ -31,26 +31,35 @@ class Trainer:
             os.makedirs(self.experiment_path)
         else:
             raise FileExistsError('This Folder is already created!')
-        
-        shutil.copyfile('Config.py', self.experiment_path+'/Config.py')
+        os.makedirs(self.experiment_path+'/Logs')
+        os.makedirs(self.experiment_path+'/Binary_files_and_models')
+        os.makedirs(self.experiment_path+'/Codes')
+        os.makedirs(self.experiment_path+'/Plots')
+
+        shutil.copyfile('Config.py', self.experiment_path+'Codes/Config.py')
+        shutil.copyfile('Model.py', self.experiment_path+'Codes/Model.py')
+        shutil.copyfile('TrainingDataset.py', self.experiment_path+'Codes/TrainingDataset.py')
+        shutil.copyfile('TimeSeriesDataset.py', self.experiment_path+'Codes/TimeSeriesDataset.py')
+        shutil.copyfile('Trainer.py', self.experiment_path+'Codes/Trainer.py')
 
         data_info_string = str(self.dataset.count_balance()) + '\n\n' + self.dataset.print_info(if_print = False)
-        file = open(self.experiment_path+'/dataset_info.txt', 'w')
+        file = open(self.experiment_path+'/Logs/dataset_info.txt', 'w')
         file.write(data_info_string)
         file.close()
         del data_info_string
 
-        self.logs = open(self.experiment_path+'/logx.txt', 'w')
-        with open(self.experiment_path+'/dataset.pickle', 'wb') as handle:
+        self.logs = open(self.experiment_path+'/Logs/logx.txt', 'w')
+        with open(self.experiment_path+'/Binary_files_and_models/dataset.pickle', 'wb') as handle:
             pickle.dump(self.dataset, handle)
 
     def save_model(self):
-        torch.save(self.model, self.experiment_path+'/last_checkpoint.trch')
+        torch.save(self.model.to('cpu'), self.experiment_path+'/Binary_files_and_models/last_checkpoint.trch')
         if len(self.test_loss) < 2:
-            torch.save(self.model, self.experiment_path+'/best_checkpoint.trch')
+            torch.save(self.model.to('cpu'), self.experiment_path+'/Binary_files_and_models/best_checkpoint.trch')
         else:
             if self.test_loss[-1] < self.test_loss[-2]:
-                torch.save(self.model, self.experiment_path+'/best_checkpoint.trch')
+                torch.save(self.model.to('cpu'), self.experiment_path+'/Binary_files_and_models/best_checkpoint.trch')
+        self.model.to(Config.DEVICE)
 
     def print_log(self, string):
         self.logs.write(string + '\n')
@@ -66,7 +75,9 @@ class Trainer:
             self.optimizer.zero_grad()
             x, y = self.dataset.get_train_batch()
             x = x.nan_to_num(0)
-            pred = self.model(x)
+            x = x.to(Config.DEVICE)
+            y = y.to(Config.DEVICE)
+            pred = self.model(x).to(Config.DEVICE)
             loss = self.criterion(pred.squeeze(), y)
             total_loss += loss.item()
             loss_to_print += loss.item()
@@ -94,7 +105,9 @@ class Trainer:
             with torch.no_grad():
                 x, y = self.dataset.get_test_batch()
                 x = x.nan_to_num(0)
-                pred = self.model(x)
+                x = x.to(Config.DEVICE)
+                y = y.to(Config.DEVICE)
+                pred = self.model(x).to(Config.DEVICE)
                 loss = self.criterion(pred.squeeze(), y)
                 total_loss += loss.item()
                 loss_to_print += loss.item()
@@ -116,24 +129,26 @@ class Trainer:
         plt.plot(self.train_loss, label = 'Train loss')
         plt.plot(self.test_loss, label = 'Test loss')
         plt.legend()
-        plt.savefig(self.experiment_path+'/Train&Test_loss_plot.pdf')
+        plt.savefig(self.experiment_path+'/Plots/Train&Test_loss_plot.pdf')
 
 
     def train(self):
         print('\nStart training...')
         try:
+            self.model.to(Config.DEVICE)
             for epoch in range(1, Config.EPOCHS+1):
                 self.train_one_epoch(epoch)
                 self.test_one_epoch(epoch)
-            with open(self.experiment_path+'/train_loss_history.pickle', 'wb') as handle:
+            with open(self.experiment_path+'/Binary_files_and_models/train_loss_history.pickle', 'wb') as handle:
                 pickle.dump(self.train_loss, handle)
-            with open(self.experiment_path+'/test_loss_history.pickle', 'wb') as handle:
+            with open(self.experiment_path+'/Binary_files_and_models/test_loss_history.pickle', 'wb') as handle:
                 pickle.dump(self.test_loss, handle)
             self.create_loss_plots()
         except KeyboardInterrupt:
             self.print_log('Experiment stoped by user!')
-            with open(self.experiment_path+'/train_loss_history.pickle', 'wb') as handle:
+            with open(self.experiment_path+'/Binary_files_and_models/train_loss_history.pickle', 'wb') as handle:
                 pickle.dump(self.train_loss, handle)
-            with open(self.experiment_path+'/test_loss_history.pickle', 'wb') as handle:
+            with open(self.experiment_path+'/Binary_files_and_models/test_loss_history.pickle', 'wb') as handle:
                 pickle.dump(self.test_loss, handle)
             self.create_loss_plots()
+

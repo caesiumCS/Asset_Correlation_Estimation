@@ -35,7 +35,6 @@ class TrainingDataset(Dataset):
                 self.sectors_to_datasets[sector] = dict()
             
             data = np.array(yf.Ticker(ticker).history(period='max')[self.left_time_border:self.right_time_border]['Close'])
-            data = np.diff(data) / data[1:]
             separate_ind = int(len(data)*self.train_size)
             data_train = data[:separate_ind]
             data_test = data[separate_ind:]
@@ -89,16 +88,7 @@ class TrainingDataset(Dataset):
         return torch.Tensor(np.array(x)), torch.Tensor(np.array(y))
 
     def prepare_label(self, label_1, label_2):
-        label_1[np.isnan(label_1)] = 0
-        label_2[np.isnan(label_2)] = 0
-        x_1 = 1
-        x_2 = 1
-        for i in range(len(label_1)):
-            x_1 = x_1*(1+label_1[i])
-            x_2 = x_2*(1+label_2[i])
-        x_1 = 1 - x_1
-        x_2 = 1 - x_2
-        return 1 if abs(x_1 - x_2) >= Config.THRESHOLD_DIFF_BETWEEN_PROFITS else 0
+        return np.corrcoef(label_1, label_2)[0][1]
         
 
     def prepare_object(self, input_1, input_2):
