@@ -120,16 +120,9 @@ class TrainingDataset(Dataset):
     
 if __name__ == '__main__':
 
-    print('\nTest and info about Training dataaset.\n\n')
+    print('\nTest Training dataaset.\n\n')
 
-    file = open('TestLogs/TrainingDatasetTestLog.txt', 'w')
     obj = TrainingDataset()
-    file.write(obj.print_info(if_print = False))
-    balance = 'Mean result of labels : '+str(obj.count_balance())+'\n'
-    print(balance)
-    file.write('\n\n'+balance)
-    file.close()
-
     with open('dataset.pickle', 'wb') as handle:
         pickle.dump(obj, handle)
 
