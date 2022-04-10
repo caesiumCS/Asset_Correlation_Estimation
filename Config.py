@@ -16,32 +16,31 @@ class Config:
     TEST_SIZE = 1 - TRAIN_SIZE
     INPUT_TIME_SERIES_SIZE = 255 # Traiding days 
     OUTPUT_TIME_SERIES_SIZE = 30 # Traiding days
-    TRAIN_BATCH_SIZE = 64
-    TEST_BATCH_SIZE = 64
-    #THRESHOLD_DIFF_BETWEEN_PROFITS = {0.1:1, 0.2:2, 0.3:3, 0.4:4, 0.5:5, 0.6:6, 0.7:7, 0.8:8, 0.9:9}
+    TRAIN_BATCH_SIZE = 32
+    TEST_BATCH_SIZE = 32
     THRESHOLD_DIFF_BETWEEN_PROFITS = 0.11
 
     '''
     Meta information about experiment
     '''
     EXPERIMENT_NUMBER = 1
-    DATE = '07.04.2020'
+    DATE = '10.04.2020'
     EXPERIMENT_FOLDER_NAME = DATE + '_'+str(EXPERIMENT_NUMBER)
 
     '''
     Model configs
     '''
     MODEL_NAME = 'CNN_Model_1'
-    ADDITIONAL_INFO = 'CNN Model, with two inputs. First version. Predict sign.'
+    ADDITIONAL_INFO = 'Predict square between plots'
     LR = 0.001
-    LOSS = 'BCELoss' # field for saving and reading experiment logs
+    LOSS = 'MSELoss' # field for saving and reading experiment logs
 
     '''
     Training configs
     '''
-    TRAIN_STEPS = 9000 # number of batches for one epoch
-    TEST_STEPS = 9000
-    EPOCHS = 100
+    TRAIN_STEPS = 3000 # number of batches for one epoch
+    TEST_STEPS = 3000
+    EPOCHS = 20
     STEPS_TO_PRINT = 300 # number of steps to print info about learning
     DEVICE = 'cpu'
     

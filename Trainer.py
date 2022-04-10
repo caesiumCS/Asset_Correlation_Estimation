@@ -22,7 +22,7 @@ class Trainer:
         self.model = CNN_TS_Model()
         self.dataset = TrainingDataset()
         
-        self.criterion = nn.L1Loss()
+        self.criterion = nn.MSELoss()
         self.optimizer = torch.optim.Adam(self.model.parameters(), Config.LR)
 
         self.experiment_path = 'Experiments/'+Config.EXPERIMENT_FOLDER_NAME

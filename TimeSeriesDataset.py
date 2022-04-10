@@ -1,5 +1,6 @@
 from torch.utils.data import Dataset
 import numpy as np
+from Config import Config
 
 class TimeSeriesDataset(Dataset):
 
@@ -15,8 +16,16 @@ class TimeSeriesDataset(Dataset):
         x = self.timeseries[index:index+self.x_window_size+1]
         x = np.diff(x) / x[1:]
         x[np.isnan(x)] = 0
-        y = self.timeseries[index+self.x_window_size+1:index+self.x_window_size+self.y_window_size+1]
-        return x, y
+        output = [1]
+        for i in range(len(x)):
+            output.append(output[-1]*(1+x[i]))
+        output = output[:self.x_window_size]
+        y = self.timeseries[index+self.x_window_size+1:index+self.x_window_size+1+self.y_window_size]
+        y = np.diff(y) / y[1:]
+        output_y = [1]
+        for i in range(len(y)):
+            output_y.append(output_y[-1]*(1+y[i]))
+        return output, output_y
 
     def get_element(self):
         x, y = self.__getitem__(index=self.ind)
