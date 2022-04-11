@@ -43,4 +43,3 @@ class Config:
     EPOCHS = 20
     STEPS_TO_PRINT = 300 # number of steps to print info about learning
     DEVICE = 'cpu'
-    
